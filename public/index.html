@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PUT TITLE HERE</title>
+    <script src="./app.js" type="module"></script>
+
+    <style>
+      .label {
+      position: absolute;  /* let us position ourself inside the container */
+      z-index: 0;          /* make a new stacking context so children don't sort with rest of page */
+      left: 0;             /* make our position the top left of the container */
+      top: 0;
+      color: white;
+      user-select: none;
+      text-shadow:         /* create a black outline */
+      -2px -2px 0 #000,
+      0   -2px 0 #000,
+      2px -2px 0 #000,
+      2px  0   0 #000,
+      2px  2px 0 #000,
+      0    2px 0 #000,
+      -2px  2px 0 #000,
+      -2px  0   0 #000;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      font-size: 14px;
+      cursor: pointer;
+    }
+  
+    #blocker {
+      z-index: 0; 
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.5);
+    }
+  </style>
+
+</head>
+<body>
+  <div id="blocker" style="display: block;">
+    <div id="instructions"  class="label" style="width: 100%; height: 100%;">
+      <p style="font-size:36px">
+        Click to play
+      </p>
+      <p>
+        Move: WASD<br>
+        Look: MOUSE<br>
+        Zoom: MOUSE WHEEL<br>
+      </p>
+    </div>
+  </div>
+<div id="canvas"></div>
+<div id="loading"  class="label" style="width: 100%;">loading</div>
+<!-- you can define ui for the desktop or mobile using html but it wont be visible once you enter vr mode -->
+<!-- also you need to style elements to have a fixed position and be drawn over the canvas element -->
+
+</body>
+</html>
